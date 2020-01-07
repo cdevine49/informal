@@ -1,13 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import ExampleComponent from 'informal'
+import { Form, Input, SubmitButton } from 'informal';
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <Form
+          initialValues={{ age: '', name: '' }}
+          onSubmit={values => {
+            console.log(values);
+          }}
+        >
+          <Input label="Name" name="name" type="text" />
+          <Input label="Age" name="age" type="number" />
+          <SubmitButton>Submit</SubmitButton>
+        </Form>
       </div>
-    )
+    );
   }
 }

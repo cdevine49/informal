@@ -1,3 +1,5 @@
 import React from 'react';
 
-export const SubmitButton = () => <button type="submit"></button>;
+export const SubmitButton = props => {
+  return <button type="submit" {...props} />;
+};
