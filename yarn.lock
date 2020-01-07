@@ -733,7 +733,7 @@
     "@babel/plugin-transform-react-jsx-self" "^7.7.4"
     "@babel/plugin-transform-react-jsx-source" "^7.7.4"
 
-"@babel/runtime@^7.6.2", "@babel/runtime@^7.7.6":
+"@babel/runtime@^7.5.1", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.6":
   version "7.7.7"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.7.tgz#194769ca8d6d7790ec23605af9ee3e42a0aa79cf"
   integrity sha512-uCnC2JEVAu8AKB5do1WRIsvrdJ0flYx/A/9f/6chdacnEZ7LmavjdsDXr5ksYBegxtuTPR5Va9/+13QF/kFkCA==
@@ -858,6 +858,21 @@
     aria-query "3.0.0"
     pretty-format "^24.9.0"
     wait-for-expect "^3.0.0"
+
+"@testing-library/jest-dom@^4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-4.2.4.tgz#00dfa0cbdd837d9a3c2a7f3f0a248ea6e7b89742"
+  integrity sha512-j31Bn0rQo12fhCWOUWy9fl7wtqkp7In/YP2p5ZFyRuiiB9Qs3g+hS4gAmDWONbAHcRmVooNJ5eOHQDCOmUFXHg==
+  dependencies:
+    "@babel/runtime" "^7.5.1"
+    chalk "^2.4.1"
+    css "^2.2.3"
+    css.escape "^1.5.1"
+    jest-diff "^24.0.0"
+    jest-matcher-utils "^24.0.0"
+    lodash "^4.17.11"
+    pretty-format "^24.0.0"
+    redent "^3.0.0"
 
 "@testing-library/react@^9.4.0":
   version "9.4.0"
@@ -3396,6 +3411,21 @@ css-what@^3.2.1:
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-3.2.1.tgz#f4a8f12421064621b456755e34a03a2c22df5da1"
   integrity sha512-WwOrosiQTvyms+Ti5ZC5vGEK0Vod3FTt1ca+payZqvKuGJF+dq7bG63DstxtN0dpm6FxY27a/zS3Wten+gEtGw==
 
+css.escape@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/css.escape/-/css.escape-1.5.1.tgz#42e27d4fa04ae32f931a4b4d4191fa9cddee97cb"
+  integrity sha1-QuJ9T6BK4y+TGktNQZH6nN3ul8s=
+
+css@^2.2.3:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/css/-/css-2.2.4.tgz#c646755c73971f2bba6a601e2cf2fd71b1298929"
+  integrity sha512-oUnjmWpy0niI3x/mPL8dVEI1l7MnG3+HHyRPHf+YFSbK+svOhXpmSOcDURUh2aOCgl2grzrOPt1nHLuCVFULLw==
+  dependencies:
+    inherits "^2.0.3"
+    source-map "^0.6.1"
+    source-map-resolve "^0.5.2"
+    urix "^0.1.0"
+
 cssesc@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-0.1.0.tgz#c814903e45623371a0477b40109aaafbeeaddbb4"
@@ -3680,6 +3710,11 @@ detect-port-alt@1.1.6:
   dependencies:
     address "^1.0.1"
     debug "^2.6.0"
+
+diff-sequences@^24.9.0:
+  version "24.9.0"
+  resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-24.9.0.tgz#5715d6244e2aa65f48bba0bc972db0b0b11e95b5"
+  integrity sha512-Dj6Wk3tWyTE+Fo1rW8v0Xhwk80um6yFYKbuAxc9c3EZxIHFDYwbi34Uk42u1CdnIiVorvt4RmlSDjIPyzGC2ew==
 
 diff@^3.2.0:
   version "3.5.0"
@@ -5546,6 +5581,11 @@ indent-string@^2.1.0:
   dependencies:
     repeating "^2.0.0"
 
+indent-string@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-4.0.0.tgz#624f8f4497d619b2d9768531d58f4122854d7251"
+  integrity sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==
+
 indexes-of@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/indexes-of/-/indexes-of-1.0.1.tgz#f30f716c8e2bd346c7b67d3df3915566a7c05607"
@@ -6161,6 +6201,16 @@ jest-diff@^20.0.3:
     jest-matcher-utils "^20.0.3"
     pretty-format "^20.0.3"
 
+jest-diff@^24.0.0, jest-diff@^24.9.0:
+  version "24.9.0"
+  resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-24.9.0.tgz#931b7d0d5778a1baf7452cb816e325e3724055da"
+  integrity sha512-qMfrTs8AdJE2iqrTp0hzh7kTd2PQWrsFyj9tORoKmu32xjPjeE4NyjVRDz8ybYwqS2ik8N4hsIpiVTyFeo2lBQ==
+  dependencies:
+    chalk "^2.0.1"
+    diff-sequences "^24.9.0"
+    jest-get-type "^24.9.0"
+    pretty-format "^24.9.0"
+
 jest-docblock@^20.0.3:
   version "20.0.3"
   resolved "https://registry.yarnpkg.com/jest-docblock/-/jest-docblock-20.0.3.tgz#17bea984342cc33d83c50fbe1545ea0efaa44712"
@@ -6182,6 +6232,11 @@ jest-environment-node@^20.0.3:
   dependencies:
     jest-mock "^20.0.3"
     jest-util "^20.0.3"
+
+jest-get-type@^24.9.0:
+  version "24.9.0"
+  resolved "https://registry.yarnpkg.com/jest-get-type/-/jest-get-type-24.9.0.tgz#1684a0c8a50f2e4901b6644ae861f579eed2ef0e"
+  integrity sha512-lUseMzAley4LhIcpSP9Jf+fTrQ4a1yHQwLNeeVa2cEmbCGeoZAtYPOIv8JaxLD/sUpKxetKGP+gsHl8f8TSj8Q==
 
 jest-haste-map@^20.0.4:
   version "20.0.5"
@@ -6217,6 +6272,16 @@ jest-matcher-utils@^20.0.3:
   dependencies:
     chalk "^1.1.3"
     pretty-format "^20.0.3"
+
+jest-matcher-utils@^24.0.0:
+  version "24.9.0"
+  resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-24.9.0.tgz#f5b3661d5e628dffe6dd65251dfdae0e87c3a073"
+  integrity sha512-OZz2IXsu6eaiMAwe67c1T+5tUAtQyQx27/EMEkbFAGiw52tB9em+uGbzpcgYVpA8wl0hlxKPZxrly4CXU/GjHA==
+  dependencies:
+    chalk "^2.0.1"
+    jest-diff "^24.9.0"
+    jest-get-type "^24.9.0"
+    pretty-format "^24.9.0"
 
 jest-matchers@^20.0.3:
   version "20.0.3"
@@ -6987,6 +7052,11 @@ mimic-fn@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
   integrity sha512-jf84uxzwiuiIVKiOLpfYk7N46TSy8ubTonmneY9vrpHNAnp0QBt2BxWV9dO3/j+BoVAb+a5G6YDPW3M5HOdMWQ==
+
+min-indent@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.0.tgz#cfc45c37e9ec0d8f0a0ec3dd4ef7f7c3abe39256"
+  integrity sha1-z8RcN+nsDY8KDsPdTvf3w6vjklY=
 
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"
@@ -8147,7 +8217,7 @@ pretty-format@^20.0.3:
     ansi-regex "^2.1.1"
     ansi-styles "^3.0.0"
 
-pretty-format@^24.3.0, pretty-format@^24.9.0:
+pretty-format@^24.0.0, pretty-format@^24.3.0, pretty-format@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-24.9.0.tgz#12fac31b37019a4eea3c11aa9a959eb7628aa7c9"
   integrity sha512-00ZMZUiHaJrNfk33guavqgvfJS30sLYf0f8+Srklv0AMPodGGHcoHgksZ3OThYnIvOd+8yMCn0YiEOogjlgsnA==
@@ -8520,6 +8590,14 @@ redent@^1.0.0:
   dependencies:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
+
+redent@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/redent/-/redent-3.0.0.tgz#e557b7998316bb53c9f1f56fa626352c6963059f"
+  integrity sha512-6tDA8g98We0zd0GvVeMT9arEOnTw9qM03L9cJXaCjrip1OO764RDBLBfrB4cwzNGDj5OA5ioymC9GkizgWJDUg==
+  dependencies:
+    indent-string "^4.0.0"
+    strip-indent "^3.0.0"
 
 reduce-css-calc@^1.2.6:
   version "1.3.0"
@@ -9296,7 +9374,7 @@ source-list-map@^2.0.0:
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-2.0.1.tgz#3993bd873bfc48479cca9ea3a547835c7c154b34"
   integrity sha512-qnQ7gVMxGNxsiL4lEuJwe/To8UnK7fAnmbGEEH8RpLouuKbeEm0lhbQVFIrNSuB+G7tVrAlVsZgETT5nljf+Iw==
 
-source-map-resolve@^0.5.0:
+source-map-resolve@^0.5.0, source-map-resolve@^0.5.2:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/source-map-resolve/-/source-map-resolve-0.5.3.tgz#190866bece7553e1f8f267a2ee82c606b5509a1a"
   integrity sha512-Htz+RnsXWk5+P2slx5Jh3Q66vhQj1Cllm0zvnaY98+NFx+Dv2CF/f5O/t8x+KaNdrdIAsruNzoh/KpialbqAnw==
@@ -9571,6 +9649,13 @@ strip-indent@^1.0.1:
   integrity sha1-DHlipq3vp7vUrDZkYKY4VSrhoKI=
   dependencies:
     get-stdin "^4.0.1"
+
+strip-indent@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/strip-indent/-/strip-indent-3.0.0.tgz#c32e1cee940b6b3432c771bc2c54bcce73cd3001"
+  integrity sha512-laJTa3Jb+VQpaC6DseHhF7dXVqHTfJPCRDaEbid/drOhgitgYku/letMUqOXFoWV0zIIUbjpdH2t+tYj4bQMRQ==
+  dependencies:
+    min-indent "^1.0.0"
 
 strip-json-comments@^2.0.1, strip-json-comments@~2.0.1:
   version "2.0.1"
