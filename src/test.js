@@ -47,3 +47,77 @@ test('should be able to submit with valid form values unless form is currently b
   expect(onSubmit).toHaveBeenCalledTimes(2);
   expect(onSubmit).toHaveBeenCalledWith({ age: '82', name: 'Jack' });
 });
+
+test('should disable submit button while any inputs invalid', () => {
+  const onSubmit = jest.fn();
+  const { getByLabelText, getByText } = render(
+    <Form initialValues={{ email: '', password: 'Abc' }} onSubmit={onSubmit}>
+      <Input label="Email" name="email" required type="email" />
+      <Input label="Password" lowercase name="password" type="password" />
+      <SubmitButton>Submit</SubmitButton>
+    </Form>
+  );
+
+  const submitButton = getByText('Submit');
+
+  expect(submitButton).toHaveAttribute('disabled');
+
+  fireEvent.change(getByLabelText('Email'), { target: { value: 'a@a.io' } });
+
+  expect(submitButton).toHaveAttribute('disabled');
+
+  fireEvent.change(getByLabelText('Password'), { target: { value: 'abc' } });
+
+  expect(submitButton).not.toHaveAttribute('disabled');
+});
+
+test('should only show errors on blur and on change after blurred for first time with delay if currently valid', () => {
+  const { getByLabelText, queryByText } = render(
+    <Form initialValues={{ age: '', name: '' }}>
+      <Input label="Email" name="email" required type="email" />
+    </Form>
+  );
+
+  expect(queryByText('Email is required')).toBeNull();
+
+  const emailInput = getByLabelText('Email');
+  fireEvent.focus(emailInput);
+
+  expect(queryByText('Email is required')).toBeNull();
+
+  fireEvent.blur(emailInput);
+
+  expect(queryByText('Email is required')).toBeTruthy();
+
+  fireEvent.change(emailInput, { target: { value: 'abc' } });
+
+  expect(queryByText('Email is required')).toBeNull();
+
+  fireEvent.change(emailInput, { target: { value: '' } });
+
+  expect(queryByText('Email is required')).toBeTruthy();
+});
+
+describe('Validations', () => {
+  const blur = input => {
+    fireEvent.focus(input);
+    fireEvent.blur(input);
+  };
+
+  test('should show error if field marked `required` is empty and add the `required` attribute to the input', () => {
+    const { getByLabelText, queryByText } = render(
+      <Form initialValues={{ age: '', name: '' }}>
+        <Input label="Username" name="username" required type="text" />
+      </Form>
+    );
+
+    const input = getByLabelText('Username');
+
+    expect(input).toHaveAttribute('required');
+    expect(queryByText('Username is required')).toBeNull();
+
+    blur(input);
+
+    expect(queryByText('Username is required')).toBeTruthy();
+  });
+});

@@ -12,7 +12,7 @@ export default class App extends Component {
             console.log(values);
           }}
         >
-          <Input label="Name" name="name" type="text" />
+          <Input label="Name" name="name" required type="text" />
           <Input label="Age" name="age" type="number" />
           <SubmitButton>Submit</SubmitButton>
         </Form>
